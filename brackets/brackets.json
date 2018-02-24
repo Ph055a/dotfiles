@@ -1,0 +1,11 @@
+{
+    "brackets-eslint.gutterMarks": true,
+    "brackets-eslint.useLocalESLint": false,
+    "fonts.fontSize": "16px",
+    "fonts.fontFamily": "'Hack'",
+    "themes.theme": "nord-brackets",
+    "brackets-markdown-preview.useGFM": true,
+    "brackets-markdown-preview.theme": "dark",
+    "brackets-markdown-preview.backgroundColor": "#2e3440",
+    "hirse.outline.enabled": false
+}
