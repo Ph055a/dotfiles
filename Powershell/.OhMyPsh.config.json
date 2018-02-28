@@ -1,0 +1,19 @@
+{
+  "OMPModuleInstallSplat": {
+    "Scope": "CurrentUser",
+    "AllowClobber": true,
+    "Force": true
+  },
+  "AutoInstallModules": true,
+  "Plugins": [],
+  "OMPDebug": false,
+  "AutoLoadModules": [],
+  "UnloadModulesOnExit": true,
+  "PersonalFunctions": [],
+  "OMPRunCount": 1,
+  "Theme": null,
+  "OMPPluginRootPaths": [
+    "/usr/local/share/powershell/Modules/OhMyPsh/0.0.7/plugins"
+  ],
+  "OMPGitOutput": "script"
+}
