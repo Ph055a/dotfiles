@@ -1,16 +1,28 @@
-set-location ~/
-
-if (!(Test-Path -Path $PROFILE)) {New-Item -Type File -Path $PROFILE -Force}
-micro $PROFILE
-
+# Import modules
+Import-Module Get-ChildItemColor
 Import-Module posh-git
 Import-Module oh-my-posh
+
+# Set Default startup location
+set-location ~/
+
+# Oh-My-Posh configuration
+# if (!(Test-Path -Path $PROFILE)) {New-Item -Type File -Path $PROFILE -Force }
 Set-Theme Agnoster
 
+# Aliases
+Set-Alias dir -Value Get-ChildItemColor -Option AllScope -Force
+Set-Alias ls -Value Get-ChildItemColorFormatWide
+
+# Functions
 function Get-CmdletAlias ($cmdletname) {
 	Get-Alias |
 	Where-Object -FilterScript {$_.Definition -like $cmdletname} |
 		Format-Table -Property Definition, Name -AutoSize
+}
+
+function Get-Profile {
+	micro ~/.config/powershell/Microsoft.PowerShell_profile.ps1
 }
 
 function Get-Update {
