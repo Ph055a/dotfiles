@@ -1,3 +1,6 @@
+# Clear screen
+cls
+
 # Import modules
 Import-Module Get-ChildItemColor
 Import-Module posh-git
@@ -12,7 +15,7 @@ Set-Theme Agnoster
 
 # Aliases
 Set-Alias dir -Value Get-ChildItemColor -Option AllScope -Force
-Set-Alias ls -Value Get-ChildItemColorFormatWide
+Set-Alias ls -Value Get-ChildItemColorFormatWide -Option AllScope -Force
 
 # Functions
 function Get-CmdletAlias ($cmdletname) {
@@ -32,6 +35,29 @@ function Get-Update {
 function Get-Power {
 	# Add text processing to cleanup output
 	upower -i /org/freedesktop/UPower/devices/battery_BAT1 | Select-String -SimpleMatch "time", "percentage", "state"
+}
+
+function Get-Constructor {
+	[CmdletBinding()]
+	Param(
+		[Parameter(ValueFromPipeline=$true)]
+		[type]$type
+	)
+
+	Process {
+		$type.GetConstructor() |
+		Format-Table -Wrap @{
+			n="$($type.Name) Constructors"
+			e={ ($_.GetParameters() | % {$_.ToString() }) -Join ", " }
+		}
+	}
+}
+
+function Find-Type {
+  Param(
+    [regex]$Pattern
+    )
+    [System.AppDomain]::CurrentDomain.GetAssemblies().GetTypes() | Select-String $Pattern
 }
 
 function Get-ModulesAll {
