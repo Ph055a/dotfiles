@@ -11,11 +11,11 @@ set-location ~/
 
 # Oh-My-Posh configuration
 # if (!(Test-Path -Path $PROFILE)) {New-Item -Type File -Path $PROFILE -Force }
-Set-Theme Agnoster
+Set-Theme Darkblood
 
 # Aliases
 Set-Alias dir -Value Get-ChildItemColor -Option AllScope -Force
-Set-Alias ls -Value Get-ChildItemColorFormatWide -Option AllScope -Force
+Set-Alias ls -Value Get-ChildItemColor -Option AllScope -Force
 
 # Functions
 function Get-CmdletAlias ($cmdletname) {
