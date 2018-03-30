@@ -1,10 +1,10 @@
-# Clear screen
-cls
-
 # Import modules
 Import-Module Get-ChildItemColor
 Import-Module posh-git
 Import-Module oh-my-posh
+
+# Clear screen
+cls
 
 # Set Default startup location
 set-location ~/
@@ -13,9 +13,15 @@ set-location ~/
 # if (!(Test-Path -Path $PROFILE)) {New-Item -Type File -Path $PROFILE -Force }
 Set-Theme Darkblood
 
+# Set Go path
+$env:GOPATH = "/home/ph055a/go"
+
 # Aliases
 Set-Alias dir -Value Get-ChildItemColor -Option AllScope -Force
 Set-Alias ls -Value Get-ChildItemColor -Option AllScope -Force
+
+# Docker Aliases
+Set-Alias dc -Value Get-DockerImages
 
 # Functions
 function Get-CmdletAlias ($cmdletname) {
@@ -35,6 +41,11 @@ function Get-Update {
 function Get-Power {
 	# Add text processing to cleanup output
 	upower -i /org/freedesktop/UPower/devices/battery_BAT1 | Select-String -SimpleMatch "time", "percentage", "state"
+}
+
+# Docker functions
+function Get-DockerImages {
+	docker images
 }
 
 function Get-Constructor {
