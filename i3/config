@@ -76,7 +76,6 @@ set $w6 "6:"
 set $w7 "7:"
 set $w8 "8:"
 set $w9 "9:"
-set $w10 "10:Junk"
 
 #switch to workspace
 bindsym $mod+1 workspace $w1
@@ -190,13 +189,12 @@ exec xrdb ~/.Xresources
 exec compton -f
 
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/jay-dantinne-246948.jpg
+exec_always feh --bg-fill ~/Pictures/4htwjGg.jpg
 
 #Polybar
 # exec polybar main
 
 # exec_always --no-startup-id ~/.config/polybar/./launch.sh
-# exec (cd ~/Notes && hugo server -p 9162 )
 
 # Go Documentation
 exec --no-startup-id godoc -http=:8080    
