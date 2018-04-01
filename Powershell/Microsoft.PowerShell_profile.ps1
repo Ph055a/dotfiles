@@ -17,12 +17,17 @@ Set-Theme Darkblood
 $env:GOPATH = "/home/ph055a/go"
 
 # Aliases
-Set-Alias dir -Value Get-ChildItemColor -Option AllScope -Force
-Set-Alias ls -Value Get-ChildItemColor -Option AllScope -Force
-
+Set-Alias dir	-Value Get-ChildItemColor -Option AllScope -Force
+Set-Alias ls 	-Value Get-ChildItemColor -Option AllScope -Force
+Set-Alias up	-Value Get-Update
+Set-Alias profile -Value Get-Profile
+Set-Alias clean	-Value	Clear-PackageManager
+ 
 # Docker Aliases
-Set-Alias dc -Value Get-DockerImages
-
+Set-Alias dc -Value Show-DockerImages
+Set-Alias dps -Value Show-DockerRunning
+Set-Alias dprune -Value Clean-DockerPrune
+ 
 # Functions
 function Get-CmdletAlias ($cmdletname) {
 	Get-Alias |
@@ -34,8 +39,20 @@ function Get-Profile {
 	micro ~/.config/powershell/Microsoft.PowerShell_profile.ps1
 }
 
+function Scan-Clamav {
+	clamscan -r -i .
+}
+
+function Get-FreshClam {
+	freshclam
+}
+
 function Get-Update {
 	sudo apt update; sudo apt upgrade
+}
+
+function Clear-PackageManager{
+	sudo apt autoclean; sudo apt autoremove
 }
 
 function Get-Power {
@@ -44,8 +61,16 @@ function Get-Power {
 }
 
 # Docker functions
-function Get-DockerImages {
+function Show-DockerImages {
 	docker images
+}
+# Show all running containers
+function Show-DockerRunning {
+	docker ps -a
+}
+# Kill all docker containers (docker kill)
+function Clean-DockerPrune {
+	docker system prune
 }
 
 function Get-Constructor {
@@ -77,4 +102,9 @@ function Get-ModulesAll {
 
 function Get-Colors {
 	[enum]::GetValues([System.ConsoleColor]) | ForEach-Object {Write-Host $_ -ForegroundColor $_}
+}
+
+# Love2D 
+function Get-Love2D {
+	love .
 }
