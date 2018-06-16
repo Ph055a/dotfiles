@@ -20,3 +20,6 @@ sudo snap install atom --classic
 echo "Installing Zenkit"
 sudo snap install zenkit
 echo "Installing Gitkraken"
+sudo snap install gitkraken
+echo "Installing docker"
+sudo snap install docker
