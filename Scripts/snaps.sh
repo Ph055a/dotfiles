@@ -21,5 +21,5 @@ echo "Installing Zenkit"
 sudo snap install zenkit
 echo "Installing Gitkraken"
 sudo snap install gitkraken
-echo "Installing docker"
+echo "Installing Docker"
 sudo snap install docker
