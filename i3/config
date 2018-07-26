@@ -211,5 +211,8 @@ exec_always feh --bg-fill ~/Pictures/Wallpaper/Blue.jpg
 # Terminal
 exec mate-terminal
 
+# shutter
+exec shutter
+
 # Wire
 exec wire-desktop
