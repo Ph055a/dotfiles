@@ -11,9 +11,9 @@ export LANG=en_US.UTF-8
 
 # 		Quick Configs
 # ------------------------------------
-alias Config_awesome="sudo micro ~/.config/awesome/rc.lua"
+alias Config_i3="sudo micro ~/.config/i3/config"
 alias Config_zsh="sudo micro .zshrc"
-alias Config_powershell="sudo micro ~/.config/powershell/Microsoft.PowerShell_profile.ps1"
+# alias Config_powershell="sudo micro ~/.config/powershell/Microsoft.PowerShell_profile.ps1"
 # ------------------------------------
 
 # 		Misc
@@ -35,6 +35,12 @@ alias Clean="sudo apt autoclean; sudo apt autoremove"
 # ------------------------------------
 alias rmi="sudo rm -rfi"		# Remove with confirmation
 alias rm="sudo rm -rf"
+# ------------------------------------
+
+# 		Remove
+# ------------------------------------
+alias nh="sudo nethogs"
+alias top="gotop"
 # ------------------------------------
 
 # 		Shutdown
@@ -86,6 +92,7 @@ alias snp_search="sudo snap search"
 alias snp_install="sudo snap install"
 alias snp_remove="sudo snap remove"
 alias snp_init="snapcraft init"
+alias snp_list="sudo snap list"
 # ------------------------------------
 
 # 		Go   													     	
@@ -113,8 +120,10 @@ alias gp="git push"
 # ------------------------------------
 alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
-alias Network_Vpn="cd /etc/openvpn/Country"
+alias Network_Vpn="cd /etc/openvpn/Country_UDP"
 # ------------------------------------
 
-# 		Domain Tools
+# 		Domain
+# ------------------------------------
+alias certs="certstream"
 # ------------------------------------
