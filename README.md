@@ -1,2 +1,2 @@
 #### Dotfiles
-Nothing interesting to see here!!
+Extra personal configurations
