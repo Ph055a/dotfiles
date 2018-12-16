@@ -7,7 +7,7 @@ font pango:Hack 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec mate-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -135,47 +135,45 @@ bindsym $mod+r mode "resize"
 
 # Colors
 set $none            #000000   
-set $very-light-gray #E6E6E6
-set $lighter-gray    #757575   
-set $gray            #373b41   
-set $dark-gray       #363738
-set $very-dark-gray  #292A2B    
-set $white           #f3f3f3
-set $light-midnight  #676B79
-set $greenish-blue   #20DFD8
-set $blue            #45A9f9
-set $blue-light      #6FC1FF
-set $purple          #B084EB
-set $green           #19F9d8
-set $red             #FF2C6D
-set $orange          #FFB86C
-set $light-orange    #fcca94
-set $pink            #FF75B5
-set $light-pink      #FF9AC1             
+set $nord1           #3b4252
+set $nord2           #434c5e
+set $nord3           #4c566a   
+set $nord4           #d8dee9
+set $nord5           #e5e9f0    
+set $nord6           #eceff4
+set $nord7           #8fbcbb
+set $nord8           #88c0d0
+set $nord9           #81a1c1
+set $nord10          #5e81ac
+set $nord11          #bf616a
+set $nord12          #d08770
+set $nord13          #ebcb8b
+set $nord14          #a3be8c
+set $nord15          #b48ead           
 
-# class                 border  backgr. text   indicator child_border
-client.focused          $none   $none $none    $none     $greenish-blue
-client.focused_inactive $none   $none  $none   $none     $none
-client.unfocused        $none   $none  $none   $none     $none
-client.urgent           $none   $none  $red    $none     $none
-client.placeholder      $none   $none  $none   $none     $none
+# class                 border  backgr. text   indicator  child_border
+client.focused          $nord1   $none  $none   $none      $nord11
+client.focused_inactive $none    $none  $none   $none      $nord3
+client.unfocused        $none    $none  $none   $none      $nord3
+client.urgent           $none    $none  $nord11 $none      $none
+client.placeholder      $nord1   $none  $none   $none      $none
 
-client.background       $lighter-gray
+client.background       $nord12
 
 bar {
         status_command i3status
         position bottom
 
-        separator_symbol "|"
+        separator_symbol ":|:"
         colors {
-          background $dark-gray
-          statusline $greenish-blue
-          separator $red
+          background $nord1
+          statusline $nord7
+          separator $nord12
 
-        # Class            border      BckGround    text
-        focused_workspace  $none       $greenish-blue        $dark-gray
-        active_workspace   $red        $none        $none
-        inactive_workspace $greenish-blue $dark-gray   $blue-light
+        # Class            border         BckGround      text
+        focused_workspace  $nord14         $nord3        $nord4
+        active_workspace   $none           $none         $nord4
+        inactive_workspace $nord3          $nord3        $nord4
         }
 }
 
@@ -190,7 +188,7 @@ bindsym $mod+shift+x exec i3lock --color #2A353B
 # Disable borders & windows
 hide_edge_borders none
 #new_window 1pixel
-new_window pixel 3
+new_window pixel 1
 
 ##### Startup Applications ####
 # Network Manager
@@ -202,17 +200,5 @@ exec xrdb ~/.Xresources
 # Compton
 exec compton -f
 
-# opensnitch
-exec opensnitch-ui
-
 # Wallpaper
 exec_always feh --bg-fill ~/Pictures/Wallpaper/Blue.jpg
-
-# Terminal
-exec mate-terminal
-
-# shutter
-exec shutter
-
-# Wire
-exec wire-desktop
