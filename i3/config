@@ -7,13 +7,13 @@ font pango:Hack 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -sidebar-mode -terminal mate-terminal
+bindsym $mod+d exec --no-startup-id rofi -show run -lines 2 -hide-scrollbar -terminal tilix
 
 # change focus
 bindsym $mod+j focus left
