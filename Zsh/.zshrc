@@ -13,10 +13,8 @@ export LANG=en_US.UTF-8
 
 # 		Quick Configs
 # ------------------------------------
-alias Config_awesome="sudo micro ~/.config/awesome/rc.lua"
 alias Config_i3="sudo micro ~/.config/i3/config"
 alias Config_zsh="sudo micro .zshrc"
-alias Config_powershell="sudo micro ~/.config/powershell/Microsoft.PowerShell_profile.ps1"
 # ------------------------------------
 
 # 		Go
@@ -42,7 +40,6 @@ alias Clean="sudo apt autoclean; sudo apt autoremove"
 # 		Remove
 # ------------------------------------
 alias Rmi="sudo rm -rfi"		# Remove with confirmation
-alias Rm="sudo rm -rf"
 # ------------------------------------
 
 # 		Shutdown
@@ -80,20 +77,7 @@ alias 100="amixer set Master 100%"
 
 # 		Docker
 # ------------------------------------
-alias Dkr_start="sudo systemctl start docker"			   # Start docker service	
-alias Dkr="sudo docker --help"
-alias Dkr_search="sudo docker search"	
-alias Dkr_Images="sudo docker container images"
-alias Dkr_prune="sudo docker container system prune"        # Kill All Docker Container
-alias Dkr_remove_all="docker rm 'docker ps --no-trunc -aq'" # Remove non-running Docker containers
-# ------------------------------------
 
-# 		Snaps   													     	
-# ------------------------------------
-alias Snp_search="sudo snap search"
-alias Snp_install="sudo snap install"
-alias Snp_remove="sudo snap remove"
-alias Sp_init="snapcraft init"
 # ------------------------------------
 
 # 		Lua5.3   													     	
@@ -112,5 +96,5 @@ alias Gp="git push"
 # ------------------------------------
 alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
-alias Network_Vpn="cd /etc/openvpn/Country"
+alias Network_Vpn="cd /etc/openvpn/"
 # ------------------------------------
