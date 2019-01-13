@@ -77,7 +77,10 @@ alias 100="amixer set Master 100%"
 
 # 		Docker
 # ------------------------------------
-
+alias ds="df -h /var/lib/docker"
+alias dmi="sudo docker images"
+alias dri="sudo docker rmi "
+alias dr="sudo docker run -it "
 # ------------------------------------
 
 # 		Lua5.3   													     	
