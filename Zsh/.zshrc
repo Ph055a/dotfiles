@@ -4,11 +4,9 @@ export ZSH=/home/ph055a/.oh-my-zsh		# Path to your oh-my-zsh installation
 TERM=xterm-256color						# Term
 ZSH_THEME="blinks"				# Theme See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 CASE_SENSITIVE="false"					# Uncomment the following line to use case-sensitive completion.
-plugins=(jsontools docker httpie aterminal)		# Plugins	
+plugins=(jsontools docker httpie)		# Plugins	
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
-
-
 # ------------------------------------
 
 # 		Quick Configs
@@ -16,11 +14,6 @@ export LANG=en_US.UTF-8
 alias Config_i3="sudo micro ~/.config/i3/config"
 alias Config_zsh="sudo micro .zshrc"
 # ------------------------------------
-
-# 		Go
-# ------------------------------------
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.bin
 
 # 		Misc
 # ------------------------------------
@@ -39,25 +32,24 @@ alias Clean="sudo apt autoclean; sudo apt autoremove"
 
 # 		Remove
 # ------------------------------------
-alias Rmi="sudo rm -rfi"		# Remove with confirmation
+alias rmi="sudo rm -rfi"		# Remove with confirmation
 # ------------------------------------
 
 # 		Shutdown
 # ------------------------------------
-alias Shutdown="sudo shutdown -h now"
+alias shutdown="sudo shutdown -h now"
 # ------------------------------------
 
 # 		Clamav
 # ------------------------------------
-alias Fresh="sudo freshclam"
-alias Scan="sudo clamscan -r ."
+alias fresh="sudo freshclam"
+alias scan="sudo clamscan -r ."
 # ------------------------------------
 
 # 		Privacy
 # ------------------------------------
-alias Mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
-alias Remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"  
-alias Fuckstarbucks="sudo rm -rf /etc/NetworkManager/system-connections/starbucks && sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
+alias mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
+alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"  
 # ------------------------------------
 
 # 		Sound
@@ -88,16 +80,31 @@ alias dr="sudo docker run -it "
 alias lua="lua5.3"
 # ------------------------------------
 
+# 		Go
+# ------------------------------------
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.bin
+# ------------------------------------
+
+# 		Crystal 													     	
+# ------------------------------------
+alias c="crystal"
+alias sh="shards"
+alias shi="shards install"
+alias shc="shards check"
+alias shb="shards build"
+# ------------------------------------
+
 # 		Git   													     	
 # ------------------------------------
-alias Gs="git status"
-alias Gaa="git add -A"
-alias Gp="git push"
+alias gs="git status"
+alias gaa="git add -A"
+alias gp="git push"
 # ------------------------------------
 
 # 		Networking
 # ------------------------------------
 alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
-alias Network_Vpn="cd /etc/openvpn/"
+alias vpn="cd /etc/openvpn/Country_UDP; ls"
 # ------------------------------------
