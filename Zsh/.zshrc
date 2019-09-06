@@ -15,6 +15,16 @@ alias Config_i3="sudo micro ~/.config/i3/config"
 alias Config_zsh="sudo micro .zshrc"
 # ------------------------------------
 
+# 		Quick Configs
+# ------------------------------------
+alias Dhl="(ruby ~/Scripts/dhl.rb)"
+# ------------------------------------
+
+# 		Hugo Server
+# ------------------------------------
+alias Hugo="(cd ~/Command/keybase/Personal/Command && hugo server)"
+# ------------------------------------
+
 # 		Misc
 # ------------------------------------
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -73,7 +83,7 @@ alias ds="df -h /var/lib/docker"
 alias dmi="sudo docker images"
 alias dri="sudo docker rmi "
 alias dr="sudo docker run -it "
-# ------------------------------------
+# -----------------------------------
 
 # 		Lua5.3   													     	
 # ------------------------------------
