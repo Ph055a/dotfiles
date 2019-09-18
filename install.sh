@@ -10,11 +10,13 @@ git \
 zsh \
 i3 \
 rofi \
+compton \
 feh \
 wget \
 curl \
 httpie \
-arc-theme
+arc-theme \
+nethogs
 
 i="sudo snap install"
 
