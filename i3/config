@@ -202,3 +202,6 @@ exec compton -f
 
 # Wallpaper
 exec_always feh --bg-fill ~/Pictures/Wallpaper/Blue.jpg
+
+# Hugo Server
+exec_always (cd ~/Command/Keybase/Personal/Command; hugo server)
