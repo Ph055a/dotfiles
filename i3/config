@@ -13,7 +13,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -lines 2 -hide-scrollbar -terminal tilix
+bindsym $mod+d exec --no-startup-id rofi -show run -lines 8 -hide-scrollbar -terminal xfce4-termainal
 
 # change focus
 bindsym $mod+j focus left
