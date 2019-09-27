@@ -63,18 +63,18 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+d focus child 
 
 # Workspace variables
-set $w1 "1:"
-set $w2 "2:"
-set $w3 "3:"
-set $w4 "4:"
-set $w5 "5:"
-set $w6 "6:"
-set $w7 "7:"
-set $w8 "8:"
-set $w9 "9:"
+set $w1 "1: Browser"
+set $w2 "2: Development"
+set $w3 "3: Testing"
+set $w4 "4: Chat"
+set $w5 "5: Editing"
+set $w6 "6: Extra"
+set $w7 "7: Keybase"
+set $w8 "8: Keypass"
+set $w9 "9: Dump"
 
 #switch to workspace
 bindsym $mod+1 workspace $w1
@@ -87,6 +87,22 @@ bindsym $mod+7 workspace $w7
 bindsym $mod+8 workspace $w8
 bindsym $mod+9 workspace $w9
 bindsym $mod+0 workspace $w10
+
+# Application workspace assignment
+# Window 1: Browser
+assign [class="Firefox"] $w1
+# Window 2: Development
+assign [class="Godot"] $w2
+assign [class="Code"] $w2
+assign [class="Atom"] $w2
+# Window 3: Testing
+assign [class="TestingStuff"] $w3 floating enabled
+# Window 4: Chat
+assign [class="TelegramDesktop"] $w4
+# window 7: Keybase
+assign [class="Keybase"] $w7
+# Window 8: Keepass
+assign [class="keepassxc"] $w8
 
 # # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $w1
