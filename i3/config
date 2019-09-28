@@ -96,7 +96,7 @@ assign [class="Godot"] $w2
 assign [class="Code"] $w2
 assign [class="Atom"] $w2
 # Window 3: Testing
-assign [class="TestingStuff"] $w3 floating enabled
+assign [class="TestingStuff"] $w3
 # Window 4: Chat
 assign [class="TelegramDesktop"] $w4
 # window 7: Keybase
