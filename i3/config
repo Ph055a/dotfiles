@@ -88,6 +88,9 @@ bindsym $mod+8 workspace $w8
 bindsym $mod+9 workspace $w9
 bindsym $mod+0 workspace $w10
 
+# Floating
+for_window [class="HoppyDays"] floating enable
+
 # Application workspace assignment
 # Window 1: Browser
 assign [class="Firefox"] $w1
@@ -96,7 +99,7 @@ assign [class="Godot"] $w2
 assign [class="Code"] $w2
 assign [class="Atom"] $w2
 # Window 3: Testing
-assign [class="TestingStuff"] $w3
+assign [class="HoppyDays"] $w3
 # Window 4: Chat
 assign [class="TelegramDesktop"] $w4
 assign [class="Rocket.Chat"] $w4
