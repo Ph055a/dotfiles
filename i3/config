@@ -103,6 +103,7 @@ assign [class="HoppyDays"] $w3
 # Window 4: Chat
 assign [class="TelegramDesktop"] $w4
 assign [class="Rocket.Chat"] $w4
+assign [class="discord"] $w4
 # window 7: Keybase
 assign [class="Keybase"] $w7
 # Window 8: Keepass
