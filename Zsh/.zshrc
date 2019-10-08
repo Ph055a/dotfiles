@@ -11,18 +11,24 @@ export LANG=en_US.UTF-8
 
 # 		Quick Configs
 # ------------------------------------
-alias Config_i3="sudo micro ~/.config/i3/config"
-alias Config_zsh="sudo micro .zshrc"
+alias i3="sudo micro ~/.config/i3/config"
+alias zsh="sudo micro .zshrc"
 # ------------------------------------
 
 # 		Quick Configs
 # ------------------------------------
 alias Dhl="(ruby ~/Scripts/dhl.rb)"
+alias 17track="(ruby ~/Scripts/17track.rb)"
 # ------------------------------------
 
 # 		Hugo Server
 # ------------------------------------
 alias Hugo="(cd ~/Command/keybase/Personal/Command && hugo server)"
+# ------------------------------------
+
+# 		Micro
+# ------------------------------------
+alias Mi="micro "
 # ------------------------------------
 
 # 		Misc
@@ -84,11 +90,6 @@ alias dmi="sudo docker images"
 alias dri="sudo docker rmi "
 alias dr="sudo docker run -it "
 # -----------------------------------
-
-# 		Lua5.3   													     	
-# ------------------------------------
-alias lua="lua5.3"
-# ------------------------------------
 
 # 		Go
 # ------------------------------------
