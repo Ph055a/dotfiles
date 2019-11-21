@@ -4,7 +4,7 @@
     "autosave": false,
     "basename": false,
     "colorcolumn": 0,
-    "colorscheme": "simple",
+    "colorscheme": "solarized",
     "cursorline": true,
     "eofnewline": false,
     "fastdirty": true,
