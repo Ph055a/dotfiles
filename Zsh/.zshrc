@@ -1,9 +1,9 @@
 # 		ZSH Configuration
 # ------------------------------------
-export ZSH=/home/ph055a/.oh-my-zsh	
-TERM=xterm-256color						
-ZSH_THEME="agnoster"				
-CASE_SENSITIVE="false"					
+export ZSH=/home/ph055a/.oh-my-zsh
+TERM=xterm-256color
+ZSH_THEME="agnoster"
+CASE_SENSITIVE="false"
 plugins=(jsontools docker httpie)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
@@ -21,14 +21,21 @@ alias Dhl="(ruby ~/Scripts/dhl.rb)"
 alias 17track="(ruby ~/Scripts/17track.rb)"
 # ------------------------------------
 
-# 		Hugo Server
+# 		Ruby Path
+# ------------------------------------
+PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+# ------------------------------------
+
+# 		Hugo
 # ------------------------------------
 alias Hugo="(cd ~/Command/keybase/Personal/Command && hugo server)"
+alias Notes="(cd ~/Notes && ./notes)"
 # ------------------------------------
 
 # 		Micro
 # ------------------------------------
 alias Mi="micro "
+VISUAL=micro; export VISUAL EDITOR=micro; export EDITOR
 # ------------------------------------
 
 # 		Misc
@@ -65,7 +72,7 @@ alias scan="sudo clamscan -r ."
 # 		Privacy
 # ------------------------------------
 alias mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
-alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"  
+alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # ------------------------------------
 
 # 		Sound
@@ -97,7 +104,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.bin
 # ------------------------------------
 
-# 		Crystal 													     	
+# 		Crystal
 # ------------------------------------
 alias c="crystal"
 alias sh="shards"
@@ -106,7 +113,7 @@ alias shc="shards check"
 alias shb="shards build"
 # ------------------------------------
 
-# 		Git   													     	
+# 		Git
 # ------------------------------------
 alias gs="git status"
 alias gaa="git add -A"
