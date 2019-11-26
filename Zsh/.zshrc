@@ -23,7 +23,7 @@ alias 17track="(ruby ~/Scripts/17track.rb)"
 
 # 		Ruby Path
 # ------------------------------------
-PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 # ------------------------------------
 
 # 		Hugo
