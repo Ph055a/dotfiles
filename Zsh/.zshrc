@@ -126,3 +126,6 @@ alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
 alias vpn="cd /etc/openvpn/Country_UDP; ls"
 # ------------------------------------
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
