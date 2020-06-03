@@ -1,1 +1,0 @@
-(cd ~/Command/Keybase/Personal/Command; hugo server)
