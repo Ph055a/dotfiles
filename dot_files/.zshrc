@@ -15,10 +15,22 @@ alias i3="sudo micro ~/.config/i3/config"
 alias zsh="sudo micro .zshrc"
 # ------------------------------------
 
+# 		Vulnerable Web Applications
+# ------------------------------------
+alias Juice="docker run --rm -p 3000:3000 bkimminich/juice-shop && firefox-esr https://localhost:3000"
+alias Bwapp="docker run -d -p 80:80 raesene/bwapp"
+# ------------------------------------
+
 # 		Micro
 # ------------------------------------
 alias Mi="micro "
 VISUAL=micro; export VISUAL EDITOR=micro; export EDITOR
+# ------------------------------------
+
+# 		Tar
+# ------------------------------------
+alias tar_d="tar -xvf "
+alias tar_c="tar -cvf "
 # ------------------------------------
 
 # 		Misc
@@ -48,14 +60,14 @@ alias shutdown="sudo shutdown -h now"
 
 # 		Clamav
 # ------------------------------------
-alias fresh="sudo freshclam"
-alias scan="sudo clamscan -r ."
+alias Fresh="sudo freshclam"
+alias ScanAV="sudo clamscan -r ."
 # ------------------------------------
 
 # 		Privacy
 # ------------------------------------
-alias mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
-alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias Mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
+alias Remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # ------------------------------------
 
 # 		Sound
@@ -75,10 +87,12 @@ alias 100="amixer set Master 100%"
 
 # 		Docker
 # ------------------------------------
-alias ds="df -h /var/lib/docker"
-alias dmi="sudo docker images"
-alias dri="sudo docker rmi "
-alias dr="sudo docker run -it "
+alias Dock_stats="docker stats"
+alias Dock_images="docker images"
+alias Dock_run_interactive="docker container run -it "
+alias Dock_run_detatch="docker container run -d "
+alias Dock_remove_all="docker stop $(docker ps -a -q)"
+alias Dock_get="docker pull golang && docker pull python && docker pull ubuntu && docker pull django"
 # -----------------------------------
 
 # 		Go
@@ -91,4 +105,19 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.bin
 # ------------------------------------
 alias Net_restart="sudo systemctl restart NetworkManager.service"
 alias Net_stop="sudo systemctl stop NetworkManager.service"
+# ------------------------------------
+
+# 		Conda Init
+# ------------------------------------
+__conda_setup="$('/home/ph055a/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ph055a/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ph055a/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ph055a/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # ------------------------------------
