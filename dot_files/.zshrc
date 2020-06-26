@@ -21,12 +21,6 @@ alias Juice="docker run --rm -p 3000:3000 bkimminich/juice-shop && firefox-esr h
 alias Bwapp="docker run -d -p 80:80 raesene/bwapp"
 # ------------------------------------
 
-# 		Micro
-# ------------------------------------
-alias Mi="micro "
-VISUAL=micro; export VISUAL EDITOR=micro; export EDITOR
-# ------------------------------------
-
 # 		Tar
 # ------------------------------------
 alias tar_d="tar -xvf "
@@ -38,6 +32,8 @@ alias tar_c="tar -cvf "
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 alias Zshreload="source .zshrc" 		# Reload alias
 alias Xreload="xrdb ~/.Xresources"		# Reload Xresources
+alias Mi="micro "
+VISUAL=micro; export VISUAL EDITOR=micro; export EDITOR
 # ------------------------------------
 
 # 		Package Management
@@ -56,6 +52,19 @@ alias rmi="sudo rm -rfi"		# Remove with confirmation
 # 		Shutdown
 # ------------------------------------
 alias shutdown="sudo shutdown -h now"
+# ------------------------------------
+
+# 	    Certs
+# ------------------------------------
+certspotter(){ 
+curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1
+}
+crtsh(){
+curl -s https://crt.sh/?Identity=%.$1 | grep ">*.$1" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$1" | sort -u | awk 'NF'
+}
+ipinfo(){
+curl -s http://ipinfo.io/$1
+}
 # ------------------------------------
 
 # 		Clamav
