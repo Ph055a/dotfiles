@@ -1,2 +1,3 @@
-#### Dotfiles
-Extra personal configurations
+# Configuration Files
+
+Configuration files for Kali Linux with KDE
