@@ -10,6 +10,10 @@ setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
+export VISUAL=micro;
+export EDITOR=micro;
+
+
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
 # hide EOL sign ('%')
@@ -188,7 +192,7 @@ fi
 
 # 		Quick Configs
 # ------------------------------------
-alias zsh="sudo micro ~/.zshrc"
+alias zsh="micro ~/.zshrc"
 # ------------------------------------
 
 # 		Tar
@@ -219,9 +223,10 @@ alias clean="sudo apt autoclean; sudo apt autoremove"
 # 		File Management
 # ------------------------------------
 alias rmi="sudo rm -rfi"
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll="ls -l"
+alias la="ls -A"
+alias h="tree -h ."
+alias d="tree -d -h"
 # ------------------------------------
 
 # 		Shutdown
@@ -238,7 +243,7 @@ alias scan_here="sudo clamscan -r ."
 
 # 		Privacy
 # ------------------------------------
-alias mac="sudo ifconfig wlp2s0 down && sudo macchanger -r wlp2s0 && sudo ifconfig wlp2s0 up"
+alias mac="sudo ifconfig eth0 down && sudo macchanger -r eth0 && sudo ifconfig eth0 up"
 alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # ------------------------------------
 
@@ -249,11 +254,52 @@ alias gaa="git add -A"
 alias gp="git push"
 # ------------------------------------
 
+# 		Peco Everything :-)
+# ------------------------------------
+# alias nmap="nmap | peco"
+alias gobuster="gobuster | peco"
+alias fping="fping -h | peco"
+# ------------------------------------
+
+# 		tryhackme
+# ------------------------------------
+alias hackme="sudo openvpn ~/TryHackMe/ph055a.ovpn"
+# ------------------------------------
+
+# 		Web
+# ------------------------------------
+alias wiki="ddgr \!w "
+alias yt="ddgr \!yt "
+alias stack="ddgr \!stackoverflow"
+alias stack1="browsh https://duckduckgo.com/?q=!stackoverflow+"
+# ------------------------------------
+
 # 		Networking
 # ------------------------------------
 alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
 alias vpn="cd /etc/openvpn/Country_UDP; ls"
+# ------------------------------------
+
+# 		Nmap
+# ------------------------------------
+alias nseDoc="browsh https://nmap.org/nsedoc/"
+
+# Scans
+# TCP Connect Scan
+alias connectScan="nmap -sT $target -p $port"
+# Ping Sweep (Noisy)
+alias pingSweep="nmap -sn $target"
+# UDP Scan
+alias udpScan="nmap -sU $target $port" 
+# ------------------------------------
+
+# 		Metasploit
+# ------------------------------------
+alias msfDoc="browsh https://docs.rapid7.com/metasploit/"
+alias msfModDoc="ranger /usr/share/doc/metasploit-framework/modules"
+alias msf="msfconsole"
+alias msfMod="ranger /usr/share/metasploit-framework/modules/"
 # ------------------------------------
 
 # 	    Certs
