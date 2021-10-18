@@ -21,7 +21,7 @@ edit_copy_contextmenu=none
 edit_find=Ctrl+F
 edit_find_next=F3
 edit_find_prev=Shift+F3
-edit_paste=Ctrl+Shift+V; Shift+Ins
+edit_paste=Ctrl+V
 enlarge-font=Ctrl++; Ctrl+=
 expand-active-view=Ctrl+Shift+]
 file_print=Ctrl+Shift+P
@@ -55,7 +55,7 @@ new-tab=Alt+T
 new-window=Ctrl+Shift+N
 new_bookmark_folder=none
 next-tab=Shift+Right; Ctrl+PgDown
-open-browser=none
+open-browser=Alt+E
 open_kcommand_bar=Ctrl+Alt+I
 options_configure=Ctrl+Shift+,
 options_configure_keybinding=Ctrl+Alt+,
