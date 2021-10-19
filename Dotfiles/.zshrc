@@ -253,13 +253,6 @@ alias gaa="git add -A"
 alias gp="git push"
 # ------------------------------------
 
-# 		Peco Everything :-)
-# ------------------------------------
-# alias nmap="nmap | peco"
-alias gobuster="gobuster | peco"
-alias fping="fping -h | peco"
-# ------------------------------------
-
 # 		tryhackme
 # ------------------------------------
 alias hackme="sudo openvpn ~/TryHackMe/ph055a.ovpn"
