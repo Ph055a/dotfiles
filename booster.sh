@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Script to boost kali linux installation with additional tools
+
 # check for sudo
 sudo_check(){
     if [ "$EUID" -ne 0 ];then 
@@ -8,36 +10,36 @@ sudo_check(){
     fi
 }
 
-directories(){
-    echo "[*] Creating Directories"
-    mkdir ~/Automation
-    mkdir ~/Github
+# Check for the existence of directories
+dir_check(){
+    if [[ -d ~/Github ]] && [[ -d ~/Scripts ]]
+    then 
+        echo "[*] Directories already exist"
+    else
+        echo "[*] Creating required directories"
+        mkdir ~/Github
+        mkdir ~/Scripts
+    fi
 }
 
+base_packages(){
+    # variables
+    install="sudo apt install -y"
+    # Package Array
+    packages=("nim" "golang" "nethogs" "tree" "jq" "peco" "vlc" "httpie" "micro")
 
-echo "[*] Installing Base Requirements"
-apt="sudo apt"
-install="sudo apt install -y "
-$apt update; sudo apt upgrade -y
-$install --reinstall build-essentials
-$install golang nim
+    # Update and Install packages
+    $install ${packages[*]}
+    echo "[*] Installing Base Requirements"
 
-$install nethogs \
-httpie \
-tree \
-micro \
-vlc \
-jq \
-peco \
+}
 
 clean(){
-    $apt autoremove -y
-    $apt autoclean -y
-    cd $GOPATH/bin
-    sudo mv * /usr/bin
+    sudo apt autoremove -y; sudo apt autoclean -y
 }
     
 
-sudo_check()
-directories()
-clean()
+sudo_check
+dir_check
+base_packages
+clean
