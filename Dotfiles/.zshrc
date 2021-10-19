@@ -1,5 +1,4 @@
-# ~/.zshrc file for zsh interactive shells.
-# see /usr/share/doc/zsh/examples/zshrc for examples
+export PATH=$PATH:~/Scripts
 
 setopt autocd              # change directory just by typing its name
 # setopt correct            # auto correct mistakes
@@ -284,7 +283,6 @@ alias vpn="cd /etc/openvpn/Country_UDP; ls"
 # 		Nmap
 # ------------------------------------
 alias nseDoc="browsh https://nmap.org/nsedoc/"
-
 # Scans
 # TCP Connect Scan
 alias connectScan="nmap -sT $target -p $port"
@@ -300,17 +298,4 @@ alias msfDoc="browsh https://docs.rapid7.com/metasploit/"
 alias msfModDoc="ranger /usr/share/doc/metasploit-framework/modules"
 alias msf="msfconsole"
 alias msfMod="ranger /usr/share/metasploit-framework/modules/"
-# ------------------------------------
-
-# 	    Certs
-# ------------------------------------
-certspotter(){ 
-curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1
-}
-crtsh(){
-curl -s https://crt.sh/?Identity=%.$1 | grep ">*.$1" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$1" | sort -u | awk 'NF'
-}
-ipinfo(){
-curl -s http://ipinfo.io/$1
-}
 # ------------------------------------
