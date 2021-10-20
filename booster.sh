@@ -3,7 +3,7 @@
 # Script to boost kali linux installation with additional tools
 
 # check for sudo
-sudo_check(){
+function sudo_check(){
     if [ "$EUID" -ne 0 ];then 
         echo "[*] This script needs to be run as root"
         exit
@@ -11,7 +11,8 @@ sudo_check(){
 }
 
 # Check for the existence of directories
-dir_check(){
+function dir_check(){
+    echo "[*] Checking if directories exist"
     if [[ -d ~/Github ]] && [[ -d ~/Scripts ]]
     then 
         echo "[*] Directories already exist"
@@ -23,31 +24,39 @@ dir_check(){
 }
 
 # Install packages via apt
-base_packages(){
+function base_packages(){
+    echo "[*] Installing base requirements"
     install="sudo apt install -y"
     # Package Array
-    packages=("nim" "golang" "nethogs" "tree" "jq" "peco" "vlc" "httpie" "micro" "clamav" "gospider" "httprobe" "assetfinder" "subfinder" "ddgr")
+    packages=("nim" "golang" "nethogs" "tree" "jq" "peco" "vlc" "httpie" "micro" "clamav" "gospider" "httprobe" "assetfinder" "subfinder" "ddgr" "zathura")
 
     # Update and Install packages
     $install ${packages[*]}
-    echo "[*] Installing Base Requirements"
 
 }
 
-go_packages(){
+function go_packages(){
+    echo "[*] Installing Go packages"
     go get -u github.com/tomnomnom/qsreplace
     go get github.com/tomnomnom/burl
     go get -u github.com/tomnomnom/unfurl
     go get github.com/shellhunter/gocewl
     GO111MODULE=on go get -u -v github.com/lc/gau
-    
+
+    # Move binaries into /bin directory
+    cd ~/go/bin
+    cp * /bin; cd ~/
 }
 
 # clean up some things after installation
-clean(){
+function clean(){
+    echo "[*] Cleaning up after installation"
     sudo apt autoremove -y; sudo apt autoclean -y
-    cd ~/go/bin
-    cp * /bin; cd ~/
+}
+
+function freshclam(){
+    echo "[*] Updating ClamAV Database"
+    sudo freshclam
 }
     
 sudo_check
@@ -55,3 +64,5 @@ dir_check
 base_packages
 go_packages
 clean
+freshclam
+echo "[*] Installation Completed!!!"
