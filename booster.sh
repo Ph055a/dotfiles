@@ -41,6 +41,7 @@ function go_packages(){
     go get github.com/tomnomnom/burl
     go get -u github.com/tomnomnom/unfurl
     go get github.com/shellhunter/gocewl
+    go get github.com/hans-strudle/seashells
     GO111MODULE=on go get -u -v github.com/lc/gau
 
     # Move binaries into /bin directory
