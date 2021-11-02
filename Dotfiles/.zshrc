@@ -208,13 +208,14 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
+alias gb="gigaToMega.sh"
 # ------------------------------------
 
 # 	    Package Management
 # ------------------------------------
 alias update="sudo apt update"
-alias upgrade="sudo apt upgrade -y"
-alias install="sudo apt install "
+alias upgrade="sudo apt full-upgrade -y"
+alias install="sudo apt install -y"
 alias remove="sudo apt remove "
 alias clean="sudo apt autoclean; sudo apt autoremove"
 # ------------------------------------
@@ -253,11 +254,6 @@ alias gaa="git add -A"
 alias gp="git push"
 # ------------------------------------
 
-# 		tryhackme
-# ------------------------------------
-alias hackme="sudo openvpn ~/TryHackMe/ph055a.ovpn"
-# ------------------------------------
-
 # 		Web
 # ------------------------------------
 alias wiki="ddgr \!w "
@@ -270,7 +266,12 @@ alias stack1="browsh https://duckduckgo.com/?q=!stackoverflow+"
 # ------------------------------------
 alias Network_restart="sudo systemctl restart NetworkManager.service"
 alias Network_stop="sudo systemctl stop NetworkManager.service"
-alias vpn="cd /etc/openvpn/Country_UDP; ls"
+alias vpn_uk="cd /etc/openvpn/Country; sudo openvpn uk.protonvpn.com.udp.ovpn "
+alias vpn_us="cd /etc/openvpn/Country; sudo openvpn us.protonvpn.com.udp.ovpn "
+alias vpn_sg="cd /etc/openvpn/Country; sudo openvpn sg.protonvpn.com.udp.ovpn "
+alias vpn_jp="cd /etc/openvpn/Country; sudo openvpn jp.protonvpn.com.udp.ovpn "
+alias vpn_tw="cd /etc/openvpn/Country; sudo openvpn tw.protonvpn.com.udp.ovpn "
+alias hackme="sudo openvpn ~/TryHackMe/ph055a.ovpn"
 # ------------------------------------
 
 # 		Nmap
