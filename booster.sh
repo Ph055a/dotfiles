@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to boost kali linux installation with additional tools
+# This script installs whatever I need on top of ParrotOS system
 
 # check for sudo
 function sudo_check(){
@@ -28,7 +28,7 @@ function base_packages(){
     echo "[*] Installing base requirements"
     install="sudo apt install -y"
     # Package Array
-    packages=("nim" "golang" "nethogs" "tree" "jq" "peco" "vlc" "httpie" "micro" "clamav" "gospider" "httprobe" "assetfinder" "subfinder" "ddgr" "zathura")
+    packages=("golang" "nethogs" "tree" "jq" "peco" "vlc" "httpie" "micro" "clamav" "gospider" "httprobe" "assetfinder" "subfinder" "ddgr" "zathura" "i3_gaps" "feh" "polybar" "unar")
 
     # Update and Install packages
     $install ${packages[*]}

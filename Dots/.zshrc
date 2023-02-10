@@ -1,4 +1,5 @@
 export PATH=$PATH:~/Scripts
+export MICRO_TRUECOLOR=1
 
 setopt autocd              # change directory just by typing its name
 # setopt correct            # auto correct mistakes
@@ -162,8 +163,8 @@ precmd() {
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
@@ -207,8 +208,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
-alias ip='ip --color=auto'
-alias gb="gigaToMega.sh"
+alias ytd="python3 $(which youtube-dl) "
 # ------------------------------------
 
 # 	    Package Management
@@ -259,24 +259,10 @@ alias gp="git push"
 alias wiki="ddgr \!w "
 alias yt="ddgr \!yt "
 alias stack="ddgr \!stackoverflow"
-alias stack1="browsh https://duckduckgo.com/?q=!stackoverflow+"
 # ------------------------------------
 
-# 		Networking
+# 		Nmap (Convert to Crystal)
 # ------------------------------------
-alias Network_restart="sudo systemctl restart NetworkManager.service"
-alias Network_stop="sudo systemctl stop NetworkManager.service"
-alias vpn_uk="cd /etc/openvpn/Country; sudo openvpn uk.protonvpn.com.udp.ovpn "
-alias vpn_us="cd /etc/openvpn/Country; sudo openvpn us.protonvpn.com.udp.ovpn "
-alias vpn_sg="cd /etc/openvpn/Country; sudo openvpn sg.protonvpn.com.udp.ovpn "
-alias vpn_jp="cd /etc/openvpn/Country; sudo openvpn jp.protonvpn.com.udp.ovpn "
-alias vpn_tw="cd /etc/openvpn/Country; sudo openvpn tw.protonvpn.com.udp.ovpn "
-alias hackme="sudo openvpn ~/TryHackMe/ph055a.ovpn"
-# ------------------------------------
-
-# 		Nmap
-# ------------------------------------
-alias nseDoc="browsh https://nmap.org/nsedoc/"
 # Scans
 # TCP Connect Scan
 alias connectScan="nmap -sT $target -p $port"
@@ -288,8 +274,5 @@ alias udpScan="nmap -sU $target $port"
 
 # 		Metasploit
 # ------------------------------------
-alias msfDoc="browsh https://docs.rapid7.com/metasploit/"
-alias msfModDoc="ranger /usr/share/doc/metasploit-framework/modules"
 alias msf="msfconsole"
-alias msfMod="ranger /usr/share/metasploit-framework/modules/"
 # ------------------------------------
