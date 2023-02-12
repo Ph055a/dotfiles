@@ -236,7 +236,6 @@ alias shutdown="sudo shutdown -h now"
 
 # 		Clamav
 # ------------------------------------
-alias fresh="sudo freshclam"
 alias scan_here="sudo clamscan -r ."
 # ------------------------------------
 

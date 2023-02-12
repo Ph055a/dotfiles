@@ -37,12 +37,12 @@ function base_packages(){
 
 function go_packages(){
     echo "[*] Installing Go packages"
-    go get -u github.com/tomnomnom/qsreplace
-    go get github.com/tomnomnom/burl
-    go get -u github.com/tomnomnom/unfurl
-    go get github.com/shellhunter/gocewl
-    go get github.com/hans-strudle/seashells
-    GO111MODULE=on go get -u -v github.com/lc/gau
+    go install -u github.com/tomnomnom/qsreplace@latest
+    go install github.com/tomnomnom/burl@latest	
+    go install -u github.com/tomnomnom/unfurl@latest
+    go install github.com/shellhunter/gocewl@latest
+    go install github.com/hans-strudle/seashells@latest
+    GO111MODULE=on go install -u -v github.com/lc/gau@latest
 
     # Move binaries into /bin directory
     cd ~/go/bin
