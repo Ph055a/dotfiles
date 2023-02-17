@@ -39,10 +39,12 @@ function go_packages(){
     echo "[*] Installing Go packages"
     go install -u github.com/tomnomnom/qsreplace@latest
     go install github.com/tomnomnom/burl@latest	
+    go install github.com/tomnomnom/waybackurls@latest
     go install -u github.com/tomnomnom/unfurl@latest
     go install github.com/shellhunter/gocewl@latest
     go install github.com/hans-strudle/seashells@latest
-    GO111MODULE=on go install -u -v github.com/lc/gau@latest
+    go install -u github.com/lc/gau@latest
+    go install github.com/tomnomnom/meg@latest
 
     # Move binaries into /bin directory
     cd ~/go/bin
