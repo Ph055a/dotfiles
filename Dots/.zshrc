@@ -1,5 +1,5 @@
-export PATH=$PATH:~/Scripts
 export MICRO_TRUECOLOR=1
+export PATH="$PATH:$HOME/.dotnet/tools/"
 
 setopt autocd              # change directory just by typing its name
 # setopt correct            # auto correct mistakes
@@ -13,24 +13,10 @@ setopt promptsubst         # enable command substitution in prompt
 export VISUAL=micro;
 export EDITOR=micro;
 
-
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
-
-# configure key keybindings
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-bindkey '^[[3~' delete-char                       # delete
-bindkey '^[[1;5C' forward-word                    # ctrl + ->
-bindkey '^[[1;5D' backward-word                   # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
-bindkey '^[[H' beginning-of-line                  # home
-bindkey '^[[F' end-of-line                        # end
-bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
 autoload -Uz compinit
@@ -195,9 +181,9 @@ fi
 alias zsh="micro ~/.zshrc"
 # ------------------------------------
 
-# 		Tar
+# 		HTB
 # ------------------------------------
-alias decompress="unar "
+alias htb="sudo openvpn ~/Base/VPN/HTB/lab_ph055a.ovpn"
 # ------------------------------------
 
 # 		Misc
@@ -244,6 +230,7 @@ alias scan_here="sudo clamscan -r ."
 # ------------------------------------
 alias mac="sudo ifconfig eth0 down && sudo macchanger -r eth0 && sudo ifconfig eth0 up"
 alias remoteip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias vpn='sudo openvpn "$(ls -1 ~/Base/VPN/Proton/UDPCountryConfig/*.ovpn | shuf -n1)"'
 # ------------------------------------
 
 # 		Git
@@ -260,13 +247,12 @@ alias yt="ddgr \!yt "
 alias stack="ddgr \!stackoverflow"
 # ------------------------------------
 
-# 		Nmap (Convert to Crystal)
+# 		Nmap
 # ------------------------------------
-# Scans
 # TCP Connect Scan
-alias connectScan="nmap -sT $target -p $port"
+alias connectScan="~/Github/hackery/Builds/./TCP_Connect_Scan"
 # Ping Sweep (Noisy)
-alias pingSweep="nmap -sn $target"
+alias pingSweep="~/Github/hackery/Builds/./Ping_Sweep"
 # UDP Scan
 alias udpScan="nmap -sU $target $port" 
 # ------------------------------------
@@ -274,4 +260,9 @@ alias udpScan="nmap -sU $target $port"
 # 		Metasploit
 # ------------------------------------
 alias msf="msfconsole"
+# ------------------------------------
+
+# 		Burp
+# ------------------------------------
+alias burp="java -jar -Xmx4g ~/BurpSuiteCommunity/burpsuite_community.jar"
 # ------------------------------------
