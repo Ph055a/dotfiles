@@ -1,5 +1,13 @@
 export MICRO_TRUECOLOR=1
+
+# Dotnet Development
 export PATH="$PATH:$HOME/.dotnet/tools/"
+
+# Flutter Development
+export CHROME_EXECUTABLE=/usr/bin/chromium-browser 
+# export ANDROID_HOME=/var/lib/flatpak/exports/bin/com.google.AndroidStudio
+# export ANDROID_SDK_ROOT=/home/ph055a/Android/Sdk
+
 
 setopt autocd              # change directory just by typing its name
 # setopt correct            # auto correct mistakes
@@ -199,11 +207,11 @@ alias ytd="python3 $(which youtube-dl) "
 
 # 	    Package Management
 # ------------------------------------
-alias update="sudo apt update"
-alias upgrade="sudo apt full-upgrade -y"
-alias install="sudo apt install -y"
-alias remove="sudo apt remove "
-alias clean="sudo apt autoclean; sudo apt autoremove"
+alias update="sudo dnf update"
+# alias upgrade="sudo apt full-upgrade -y"
+alias install="sudo dnf install -y "
+alias remove="sudo dnf remove "
+# alias clean="sudo apt autoclean; sudo apt autoremove"
 # ------------------------------------
 
 # 		File Management
@@ -225,6 +233,11 @@ alias shutdown="sudo shutdown -h now"
 alias scan_here="sudo clamscan -r ."
 # ------------------------------------
 
+# 		Development
+# ------------------------------------
+alias android="/home/ph055a/android-studio/bin/./studio.sh"
+alias doctor="flutter doctor -v"
+# ------------------------------------
 
 # 		Privacy
 # ------------------------------------
@@ -238,23 +251,6 @@ alias vpn='sudo openvpn "$(ls -1 ~/Base/VPN/Proton/UDPCountryConfig/*.ovpn | shu
 alias gs="git status"
 alias gaa="git add -A"
 alias gp="git push"
-# ------------------------------------
-
-# 		Web
-# ------------------------------------
-alias wiki="ddgr \!w "
-alias yt="ddgr \!yt "
-alias stack="ddgr \!stackoverflow"
-# ------------------------------------
-
-# 		Nmap
-# ------------------------------------
-# TCP Connect Scan
-alias connectScan="~/Github/hackery/Builds/./TCP_Connect_Scan"
-# Ping Sweep (Noisy)
-alias pingSweep="~/Github/hackery/Builds/./Ping_Sweep"
-# UDP Scan
-alias udpScan="nmap -sU $target $port" 
 # ------------------------------------
 
 # 		Metasploit

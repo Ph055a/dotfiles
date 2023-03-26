@@ -1,3 +1,3 @@
 # Configuration Files
 
-Configuration files for Kali Linux with KDE
+Config files for a Fedora
