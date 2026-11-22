@@ -112,8 +112,12 @@ if [ ! -x "$HOME/.cargo/bin/rustup" ]; then
 fi
 # shellcheck disable=SC1091
 . "$HOME/.cargo/env"
+# SupaModel for Android: Rust's Android parts (phones and tablets, older
+# phones, the emulator), and cargo-ndk (below), which builds the engine with
+# the NDK.
+rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android
 # One build at a time: more runs this computer out of memory.
-for tool in "flutter_rust_bridge_codegen@2.13.0" cargo-expand cargo-deny wallust; do
+for tool in "flutter_rust_bridge_codegen@2.13.0" cargo-ndk cargo-expand cargo-deny wallust; do
   name="${tool%@*}"
   if ! have "$name"; then
     cargo install -j 1 --locked "$tool" || echo "   (couldn't build $name; skipped)"
