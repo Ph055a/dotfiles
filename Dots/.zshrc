@@ -77,6 +77,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# No beep from the shell
+unsetopt BEEP
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -124,7 +127,7 @@ SAVEHIST=20000
 
 # Flutter / Android / Chrome
 export PATH="$HOME/Flutter/bin:$PATH"
-export CHROME_EXECUTABLE="/snap/bin/chromium"
+export CHROME_EXECUTABLE="$(command -v chromium || command -v chromium-browser || echo /snap/bin/chromium)"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
